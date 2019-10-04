@@ -1,13 +1,13 @@
 SUMMARY = "U-Boot bootloader image creation tool"
 LICENSE = "GPLv2+"
-LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
+LIC_FILES_CHKSUM = "file://Licenses/README;md5=30503fd321432fc713238f582193b78e"
 SECTION = "bootloader"
 
-DEPENDS = "openssl"
+DEPENDS = "openssl bison"
 
 require u-boot-common_${PV}.inc
 
-EXTRA_OEMAKE = 'HOSTCC="${CC}" HOSTLD="${LD}" HOSTLDFLAGS="${LDFLAGS}" HOSTSTRIP=true'
+EXTRA_OEMAKE = 'HOSTCC="${CC}" HOSTLD="${LD}" HOST_CFLAGS="${CFLAGS}" HOSTLDFLAGS="${LDFLAGS}" HOSTSTRIP=true'
 
 do_compile () {
 	oe_runmake edison_defconfig
@@ -24,7 +24,7 @@ BBCLASSEXTEND = "native nativesdk"
 
 SUMMARY = "U-Boot bootloader image creation tool"
 LICENSE = "GPLv2+"
-LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
+LIC_FILES_CHKSUM = "file://Licenses/README;md5=30503fd321432fc713238f582193b78e"
 SECTION = "bootloader"
 
-DEPENDS = "openssl"
+DEPENDS = "openssl bison"
