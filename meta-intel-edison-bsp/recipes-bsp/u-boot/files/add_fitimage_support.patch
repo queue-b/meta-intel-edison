@@ -1,0 +1,16 @@
+diff --git a/configs/edison_defconfig b/configs/edison_defconfig
+index 470e30c8a3..b24fa47976 100644
+--- a/configs/edison_defconfig
++++ b/configs/edison_defconfig
+@@ -43,3 +43,11 @@ CONFIG_USB_GADGET_DOWNLOAD=y
+ # CONFIG_USB_HOST_ETHER is not set
+ CONFIG_FAT_WRITE=y
+ CONFIG_SHA1=y
++CONFIG_SECURE_BOOT=y
++CONFIG_SPL_DRIVERS_MISC_SUPPORT=y
++CONFIG_FIT=y
++CONFIG_FIT_VERBOSE=y
++CONFIG_FIT_SIGNATURE=y
++CONFIG_RSA=y
++CONFIG_OF_CONTROL=y
++CONFIG_OF_SEPARATE=y
