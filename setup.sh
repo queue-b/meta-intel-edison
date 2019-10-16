@@ -25,8 +25,8 @@
 set -e
 
 # Branch and Tag to fetch from the yoctoproject.org upstream repository.
-yocto_branch="thud"
-yocto_tag="thud"
+yocto_branch="zeus"
+yocto_tag="zeus"
 
 do_local_conf () {
   rm $yocto_conf_dir/local.conf
@@ -40,6 +40,7 @@ EOF
 MACHINE = "edison"
 DISTRO = "poky-edison"
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+
 PATCHRESOLVE = "noop"
 CONF_VERSION = "1"
 EDISONREPO_TOP_DIR = "$top_repo_dir"
@@ -346,8 +347,6 @@ COPYLEFT_LICENSE_INCLUDE = 'GPL* LGPL*'
   echo "Applying patch on poky"
   cd $mingw_dir
   git apply $top_repo_dir/meta-intel-edison/utils/0001-Enable-SDKTAROPTS.patch
-  cd $poky_dir
-  git apply $top_repo_dir/meta-intel-edison/utils/0001-bitbake.conf-building-linux-yocto-5.2-requires-realp.patch
 
   if [[ $my_sdk_host == win* ]]
   then
